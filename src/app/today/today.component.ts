@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { WeatherService } from '../weather.service';
-import { Local } from './geolocationAPIModel';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-today',
@@ -12,18 +10,19 @@ export class TodayComponent implements OnInit {
 
   constructor(private weatherService: WeatherService) { }
 
+  data: number = Date.now();
   lat: any;
   lon: any;
-  weather!: Local;
+  weather!: any;
 
   ngOnInit(): void {
-    this.getLocation();
+    this.getLocation();  //false quer dizer que é para executar o getLocation, eu mudo para 
   }
   
   //retorna as coordenadas baseado na geolocalização do browser
   getLocation(){
     if('geolocation' in navigator){
-      navigator.geolocation.watchPosition(dados => {
+      navigator.geolocation.getCurrentPosition(dados => { //poderia usar o watchPosition, nesse caso, o browser ficaria atualizando as informações com a localização atual de tempos em tempos
         this.lat = dados.coords.latitude;
         this.lon = dados.coords.longitude;
 
@@ -34,4 +33,12 @@ export class TodayComponent implements OnInit {
       })
     }
   }
+
+  //retorna a cidade baseado no que o usuário digitar na input
+  getCity(city: string){
+    this.weatherService.getWeatherDataByCityName(city).subscribe(data => {
+      this.weather = data;
+    })
+  }
+
 }

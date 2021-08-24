@@ -1,4 +1,4 @@
-export interface Local {
+export interface LocalCoord {
     "coord": { "lon": number,"lat": number},
     "weather": [
         {

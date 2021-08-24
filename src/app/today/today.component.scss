@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif, Helvetica, Arial;
+    color: #fff;
+    //background: url('./images/background-body.png');
+}
+
+.cards-container{
+    display: flex;
+    flex-direction: column; 
+}
+
+.card-header{
+    //background-image: url('');
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 80vw;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.card-header > input{
+    width: 60%;
+    height: 30%;
+}
+
+.card-header > button{
+    width: 20%;
+    height: 30%;
+    border-radius: 15px;
+}
+
+.cards-body{   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+}
+
+.card-esquerdo{
+    background-image: url('./images/background-day.jpg');
+    border-radius: 20px;
+    display: block;  
+    height: 70vh;
+    width: 45%;
+}
+
+.data-cidade-atual{
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-atual{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.nome-cidade-atual{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.img-temperatura{
+    vertical-align: middle;
+    width: 50%;
+}
+
+.temperatura-atual{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+
+.previsao-proximos-dias{
+    height: 25%;
+}
+
+.temperatura{
+    font-size: 50px;
+}
+
+.card-direito{
+    display: block;
+    background-image: url('./images/background-day.jpg');
+    border-radius: 20px;
+    height: 70vh;
+    width: 45%;
+}
+
+.tabela-informacoes-clima{
+    height: 70%;
+    width: 100%;
+    font-size: medium; 
+}
+
+
+.tabela-informacoes-clima tr{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+
+@media only screen and (max-width: 700px){
+    .tabela-informacoes-clima{
+        font-size: 10px; 
+    }
+
+    .temperatura{
+        font-size: 35px;
+    }
+}
