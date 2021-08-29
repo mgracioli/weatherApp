@@ -14,9 +14,10 @@ export class TodayComponent implements OnInit {
   lat: any;
   lon: any;
   weather!: any;
+  ico!: string;
 
   ngOnInit(): void {
-    this.getLocation();  //false quer dizer que é para executar o getLocation, eu mudo para 
+    //sthis.getLocation();  //false quer dizer que é para executar o getLocation, eu mudo para 
   }
   
   //retorna as coordenadas baseado na geolocalização do browser
@@ -26,7 +27,7 @@ export class TodayComponent implements OnInit {
         this.lat = dados.coords.latitude;
         this.lon = dados.coords.longitude;
 
-        //O serviço getWeatherDataByCoords retorna um observable com os dados retornados pelo servidor
+        //O serviço getWeatherDataByCoords retorna um observable com os dados do clima retornados pelo servidor
         this.weatherService.getWeatherDataByCoords(this.lat, this.lon).subscribe(data => {
           this.weather = data;
         });

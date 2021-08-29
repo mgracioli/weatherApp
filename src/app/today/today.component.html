@@ -1,10 +1,9 @@
 
-<div class="cards-container">  <!--o offset-md-3 move a div 3 colunas para a direita (do inicio da div, desloca 3 colunas)-->
-    
+<div class="cards-container">
     <div class="card-header">
-        <input class="form-control" type="text" #userInput placeholder="Pesquisar cidade">
+        <input class="form-control input-pesquisar" type="text" #userInput placeholder="Pesquisar cidade">
         
-        <button (click)="getCity(userInput.value)">Pesquisar</button>
+        <button class="btn-pesquisar" (click)="getCity(userInput.value)">Pesquisar</button>
     </div>
 
     <div class="cards-body">
@@ -18,13 +17,50 @@
             </div>
    
             <div class="temperatura-atual">
-                <img class="img-temperatura" src="/weatherApp/src/app/today/images/ceuLimpoDia.png">
-
-                <p class="temperatura">{{ weather.main.temp }}°</p>
+                <figure>
+                    <img class="img-temperatura" src='../../assets/iconesClima/{{ weather.weather[0].icon }}.png' alt="icone do tempo atual"> <!--O icone de tempo atualiza automaticamente conforme a temperatura (já vem o nome do ícone respectivo direto da API)-->
+                </figure>
+                <div>
+                    <p class="temperatura">{{ weather.main.temp }}°</p>
+                </div>
             </div>
 
             <div class="previsao-proximos-dias">
-                
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Dom</p>
+                    <p > XX°</p>
+                </div>
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Seg</p>
+                    <p> XX°</p>
+                </div>
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Ter</p>
+                    <p> XX°</p>
+                </div>
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Qua</p>
+                    <p> XX°</p>
+                </div> 
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Qui</p>
+                    <p> XX°</p>
+                </div>
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Sex</p>
+                    <p> XX°</p>
+                </div>
+                <div class="temperatura-futura">
+                    <div> icone </div>
+                    <p>Sab</p>
+                    <p> XX°</p>
+                </div>  
             </div>
         </div>
     

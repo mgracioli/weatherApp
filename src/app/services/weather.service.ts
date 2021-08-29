@@ -13,7 +13,7 @@ export class WeatherService {
  
   constructor(private http: HttpClient) { }
 
-  //retorna os dados da API por latitude e longitude da API
+  //retorna os dados da API por latitude e longitude atuais do navegador
   getWeatherDataByCoords(lat: any, lon: any){
     const params = new HttpParams()
       .set('lat', lat)
