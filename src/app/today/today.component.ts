@@ -17,7 +17,7 @@ export class TodayComponent implements OnInit {
   ico!: string;
 
   ngOnInit(): void {
-    //sthis.getLocation();  //false quer dizer que é para executar o getLocation, eu mudo para 
+    this.getLocation();  //false quer dizer que é para executar o getLocation, eu mudo para 
   }
   
   //retorna as coordenadas baseado na geolocalização do browser
